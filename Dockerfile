@@ -1,7 +1,7 @@
 FROM debian:stretch-slim
 
-ARG USER
-ARG PASS
+ARG USER=user-ssh
+ARG PASS=password-ssh
 
 
 RUN apt-get update -qq \
