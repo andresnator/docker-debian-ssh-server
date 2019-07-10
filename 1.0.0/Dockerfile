@@ -1,5 +1,9 @@
 FROM debian:stretch-slim
 
+LABEL Maintainer="andresnator@gmail.com" \
+    Name=debian-ssh-server \
+    Version=1.0.0
+    
 ARG USER=user-ssh
 ARG PASS=password-ssh
 
