@@ -1,5 +1,9 @@
 FROM debian:stretch-slim
 
+LABEL Maintainer="andresnator@gmail.com" \
+    Name=debian-ssh-server \
+    Version=latest 
+    
 ARG USER=user-ssh
 ARG PASS=password-ssh
 
@@ -28,6 +32,7 @@ RUN chown ${USER}:${USER} -R /home/${USER} && \
   chmod 600 /home/${USER}/.ssh/authorized_keys
 
 
+
 RUN apt-get update -qq && apt-get install -y \
 mysql-server \
 awscli \
@@ -37,3 +42,4 @@ ADD script  /script
 RUN chmod +x /script
 
 CMD ["/usr/sbin/sshd", "-D"]
+
