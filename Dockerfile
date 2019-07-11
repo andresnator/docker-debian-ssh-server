@@ -32,14 +32,5 @@ RUN chown ${USER}:${USER} -R /home/${USER} && \
   chmod 600 /home/${USER}/.ssh/authorized_keys
 
 
-
-RUN apt-get update -qq && apt-get install -y \
-mysql-server \
-awscli \
-1> /dev/null 
-
-ADD script  /script
-RUN chmod +x /script
-
 CMD ["/usr/sbin/sshd", "-D"]
 
